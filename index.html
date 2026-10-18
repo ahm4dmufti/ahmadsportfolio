@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad El Mufti, software engineer</title>
+  <meta name="description" content="Ahmad El Mufti, software engineer in Benghazi. Security engineer at Pulsar, CEO of Mufti Gallery, founder of TechGuard and DARA MAN.">
+  <meta name="theme-color" content="#181715">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23181715'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23e8e8e3' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+  <script>
+    document.documentElement.classList.add('js');
+    try { if (new URLSearchParams(location.search).get('lang') === 'ar' || localStorage.getItem('lang') === 'ar') document.documentElement.classList.add('pre-ar'); } catch (e) {}
+    setTimeout(function () { document.documentElement.classList.remove('pre-ar'); }, 2000);
+  </script>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@400,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="font-ar" href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/me-cutout.webp" imagesrcset="/assets/me-cutout-720.webp 720w, /assets/me-cutout.webp 1254w" imagesizes="(max-width: 700px) 125vw, 82svh" fetchpriority="high">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="top">
+    <a class="wordmark" href="#top" data-i18n="wordmark">A. El Mufti</a>
+    <nav class="top__nav" aria-label="Main" data-i18n-attr="aria-label:navLabel">
+      <a class="link" href="#work" data-i18n="navWork">Work</a>
+      <a class="link" href="#about" data-i18n="navAbout">About</a>
+      <a class="link" href="#experience" data-i18n="navExperience">Experience</a>
+      <a class="link" href="#contact" data-i18n="navContact">Contact</a>
+    </nav>
+    <button class="lang" type="button" id="lang" lang="ar" aria-label="اقرأ الصفحة بالعربية">عربي</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="hero__stage">
+        <h1 class="hero__name" id="hero-name" aria-label="Ahmad El Mufti">
+          <span class="hero__word" aria-hidden="true">Ahmad</span>
+          <span class="hero__word" aria-hidden="true">El&nbsp;Mufti</span>
+        </h1>
+        <div class="hero__figure">
+          <img class="hero__cutout"
+               src="/assets/me-cutout.webp"
+               srcset="/assets/me-cutout-720.webp 720w, /assets/me-cutout.webp 1254w"
+               sizes="(max-width: 700px) 125vw, 82svh"
+               width="1254" height="1254" fetchpriority="high" decoding="async"
+               alt="Ahmad El Mufti in a black t-shirt, hands folded, looking at the camera"
+               data-i18n-attr="alt:cutoutAlt">
+        </div>
+      </div>
+      <div class="hero__foot">
+        <p class="hero__line" data-rise style="--i:0" data-i18n="heroLine">Software engineer in Benghazi. I build the systems behind the businesses I run, and help secure other people’s at Pulsar.</p>
+        <div class="hero__actions" data-rise style="--i:1">
+          <a class="button button--primary" href="#work" data-i18n="ctaWork">View work</a>
+          <a class="button button--quiet" href="#contact" data-i18n="ctaContact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about__text">
+        <h2 class="h-section" id="about-title" data-reveal style="--i:0" data-i18n="aboutTitle">Code first</h2>
+        <p class="about__first" data-reveal style="--i:1" data-i18n="about1">I’m Ahmad, a software engineering student at the Libyan International Medical University, and I build software for real businesses. Most of them are my own.</p>
+        <p data-reveal style="--i:2" data-i18n="about2">My family has run Mufti Gallery since the 1950s. As its CEO I’m turning a room of antiques and fine art into a bilingual online auction house, which is also my graduation project.</p>
+        <p data-reveal style="--i:3" data-i18n="about3">I joined Pulsar as an intern in January 2026 and now work there as a security engineer. It changed how I write code: I assume someone is trying to break it.</p>
+        <p data-reveal style="--i:4" data-i18n="about4">I also founded TechGuard, which installs Hikvision camera systems in homes and businesses, and DARA MAN, a resale label for designer menswear.</p>
+      </div>
+      <figure class="about__portrait shutter" data-reveal>
+        <img src="/assets/me-1254.webp" srcset="/assets/me-760.webp 760w, /assets/me-1254.webp 1254w"
+             sizes="(max-width: 800px) 92vw, 42vw" width="1254" height="1254" loading="lazy" decoding="async"
+             alt="Black-and-white portrait of Ahmad against a grey backdrop" data-i18n-attr="alt:portraitAlt">
+      </figure>
+      <figure class="about__postcard" data-reveal>
+        <div class="about__frame"><img src="/assets/benghazi-postcard.webp" width="1000" height="687" loading="lazy" decoding="async"
+             alt="Maidan Al Baladiya in Benghazi: palm trees, the old town hall clock tower and 1960s cars"
+             data-i18n-attr="alt:postcardAlt"></div>
+        <figcaption data-i18n="postcardCaption">Maidan Al Baladiya, Benghazi, on a Feyturi postcard from before 1969.</figcaption>
+      </figure>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-title">
+      <h2 class="h-section work__title" id="work-title" data-reveal data-i18n="workTitle">Selected work</h2>
+
+      <article class="project project--a" data-reveal>
+        <h3 class="project__name" data-i18n="p1Name">Mufti Gallery auction platform</h3>
+        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
+          <div class="ui-auction">
+            <div class="ui-bar"><span class="ui-brand">Mufti Gallery</span><span class="ui-tabs"><b>Auctions</b><span>Shop</span><span lang="ar">المزادات</span></span><span class="ui-langs"><b>EN</b><span>ع</span></span></div>
+            <div class="ui-lots">
+              <div class="ui-lot is-hot">
+                <div><p class="ui-lot__t">Brass coffee pot, engraved</p><p class="ui-lot__t" lang="ar" dir="rtl">دلة قهوة نحاسية منقوشة</p></div>
+                <div class="ui-lot__n"><span>Current bid</span><strong>LYD 2,450</strong><em>14 bids</em></div>
+                <div class="ui-lot__n"><span>Ends in</span><strong>02:14:09</strong><button tabindex="-1">Bid LYD 2,500</button></div>
+              </div>
+              <div class="ui-lot">
+                <div><p class="ui-lot__t">Oil on canvas, harbour at dusk</p><p class="ui-lot__t" lang="ar" dir="rtl">لوحة زيتية، الميناء عند الغروب</p></div>
+                <div class="ui-lot__n"><span>Current bid</span><strong>LYD 6,800</strong><em>9 bids</em></div>
+                <div class="ui-lot__n"><span>Ends in</span><strong>1d 05:40</strong><button tabindex="-1">Bid LYD 7,000</button></div>
+              </div>
+              <div class="ui-lot">
+                <div><p class="ui-lot__t">Silver tray, pair</p><p class="ui-lot__t" lang="ar" dir="rtl">صينيتان من الفضة</p></div>
+                <div class="ui-lot__n"><span>Buy now</span><strong>LYD 1,200</strong><em>Fixed price</em></div>
+                <div class="ui-lot__n"><span>Stock</span><strong>1 left</strong><button tabindex="-1">Add to cart</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="project__desc" data-i18n="p1Desc">Graduation project, in progress. A bilingual Arabic and English auction house with a fixed-price store beside it.</p>
+      </article>
+
+      <article class="project project--b" data-reveal>
+        <h3 class="project__name" data-i18n="p2Name">Cloud CI/CD pipeline</h3>
+        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
+          <div class="ui-run">
+            <div class="ui-run__head"><span class="ui-ok"></span><strong>deploy.yml</strong><span>main · #128 · 6m 41s</span></div>
+            <ul class="ui-jobs">
+              <li><span class="ui-ok"></span>lint &amp; test<em>58s</em></li>
+              <li><span class="ui-ok"></span>docker build &amp; push<em>2m 03s</em></li>
+              <li><span class="ui-ok"></span>terraform plan<em>47s</em></li>
+              <li><span class="ui-ok"></span>terraform apply<em>1m 32s</em></li>
+              <li><span class="ui-ok"></span>deploy to AKS<em>1m 21s</em></li>
+            </ul>
+<pre><code>deploy:
+  needs: [build, terraform]
+  runs-on: ubuntu-latest
+  environment: production
+  steps:
+    - uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Deploy to AKS
+      uses: azure/k8s-deploy@v5
+      with:
+        namespace: production
+        manifests: k8s/
+        images: ${{ env.ACR }}/api:${{ github.sha }}</code></pre>
+            <p class="ui-run__foot"><span class="ui-ok"></span>api:3f9c2e1 live in production, 3 of 3 pods ready</p>
+          </div>
+        </div>
+        <p class="project__desc" data-i18n="p2Desc">A Node.js service on Azure AKS. Terraform builds the infrastructure and GitHub Actions ships every commit to main.</p>
+      </article>
+
+      <article class="project project--remark" data-reveal>
+        <h3 class="project__name" data-i18n="p5Name">PulSec brand system</h3>
+        <p class="project__remark" data-i18n="p5Desc">A full brand identity for Pulsar’s managed security service, covering its SOC and threat-intelligence offer.</p>
+      </article>
+
+      <article class="project project--c" data-reveal>
+        <h3 class="project__name" data-i18n="p3Name">Mufti Gallery product manager</h3>
+        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
+          <div class="ui-table">
+            <div class="ui-table__head"><strong>Products</strong><span class="ui-search">Search 312 pieces</span><button tabindex="-1">New product</button></div>
+            <table>
+              <thead><tr><th>Piece</th><th>Period</th><th>Price</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Brass coffee pot, engraved</td><td>Early 20th c.</td><td>LYD 2,450</td><td><span class="ui-pill is-live">In auction</span></td></tr>
+                <tr class="is-sel"><td>Silver tray, pair</td><td>1950s</td><td>LYD 1,200</td><td><span class="ui-pill is-shop">In shop</span></td></tr>
+                <tr><td>Oil on canvas, harbour at dusk</td><td>1960s</td><td>LYD 6,800</td><td><span class="ui-pill is-live">In auction</span></td></tr>
+                <tr><td>Carved wooden chest</td><td>Late 19th c.</td><td>LYD 3,900</td><td><span class="ui-pill">Draft</span></td></tr>
+                <tr><td>Glass oil lamp</td><td>1940s</td><td>LYD 650</td><td><span class="ui-pill is-shop">In shop</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="project__desc" data-i18n="p3Desc">The gallery’s back office, in Laravel with Inertia.js and Jetstream: every piece catalogued, priced and sent to auction or the shop.</p>
+      </article>
+
+      <article class="project project--d" data-reveal>
+        <h3 class="project__name" data-i18n="p4Name">SME inventory and sales system</h3>
+        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
+          <div class="ui-inv">
+            <div class="ui-inv__stats">
+              <div><span>Sales today</span><strong>LYD 4,180</strong></div>
+              <div><span>Orders</span><strong>23</strong></div>
+              <div><span>Low stock</span><strong class="is-warn">3 items</strong></div>
+            </div>
+            <ul class="ui-inv__list">
+              <li><span>A4 paper, 500 sheets</span><em>4 left · reorder at 10</em></li>
+              <li><span>Printer toner, black</span><em>2 left · reorder at 5</em></li>
+              <li><span>USB-C cable, 1 m</span><em>6 left · reorder at 15</em></li>
+            </ul>
+            <div class="ui-inv__recent">
+              <p>Recent sales</p>
+              <ul><li><span>#1043 · 3 items</span><b>LYD 215</b></li><li><span>#1042 · 1 item</span><b>LYD 48</b></li><li><span>#1041 · 6 items</span><b>LYD 390</b></li></ul>
+            </div>
+            <div class="ui-inv__best">
+              <p>Best sellers this week</p>
+              <ol><li><span>Ballpoint pens, box of 50</span><b>41 sold</b></li><li><span>A4 paper, 500 sheets</span><b>36 sold</b></li><li><span>Sticky notes, 12 pads</span><b>22 sold</b></li></ol>
+            </div>
+          </div>
+        </div>
+        <p class="project__desc" data-i18n="p4Desc">A team project in Laravel: stock levels, sales and reorder alerts for a small business.</p>
+      </article>
+      <p class="work__note" data-i18n="workNote">Interfaces above are drawn for this page with sample data.</p>
+    </section>
+
+    <section class="exp" id="experience" aria-labelledby="exp-title">
+      <h2 class="exp__title" id="exp-title" data-reveal data-i18n-html="expTitle">Four roles,<br> one city</h2>
+      <div class="exp__body">
+        <figure class="exp__photo" data-reveal>
+          <img src="/assets/town-hall-chandelier.webp" width="1100" height="1520" loading="lazy" decoding="async"
+               alt="A pierced brass chandelier hangs in the arched hall of Benghazi’s old town hall, with carved chairs below"
+               data-i18n-attr="alt:chandelierAlt">
+          <figcaption data-i18n="chandelierCaption">Benghazi Town Hall, before 1943.</figcaption>
+        </figure>
+        <ul class="exp__list">
+          <li class="exp__row" data-reveal style="--i:0">
+            <span class="exp__role" data-i18n="e1Role">Security engineer</span>
+            <span class="exp__place"><strong>Pulsar</strong> <span data-i18n="e1Place">Cybersecurity firm, Benghazi. Started as an intern, January to March 2026.</span></span>
+            <span class="exp__when" data-i18n="e1When">2026 – now</span>
+          </li>
+          <li class="exp__row" data-reveal style="--i:1">
+            <span class="exp__role" data-i18n="e2Role">CEO</span>
+            <span class="exp__place"><strong>Mufti Gallery</strong> <span data-i18n="e2Place">The family’s antiques and fine-art gallery, with roots in the 1950s.</span></span>
+            <span class="exp__when" data-i18n="e2When">Family since the 1950s</span>
+          </li>
+          <li class="exp__row" data-reveal style="--i:2">
+            <span class="exp__role" data-i18n="e3Role">Founder</span>
+            <span class="exp__place"><strong>TechGuard</strong> <span data-i18n="e3Place">Hikvision CCTV systems, designed and installed for homes and businesses.</span></span>
+            <span class="exp__when" data-i18n="e3When">Residential and commercial</span>
+          </li>
+          <li class="exp__row" data-reveal style="--i:3">
+            <span class="exp__role" data-i18n="e4Role">Founder</span>
+            <span class="exp__place"><strong>DARA MAN</strong> <span data-i18n="e4Place">Resale of designer menswear, sourced and checked piece by piece.</span></span>
+            <span class="exp__when" data-i18n="e4When">Menswear resale</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="certs" id="certifications" aria-labelledby="certs-title">
+      <h2 class="certs__title" id="certs-title" data-reveal data-i18n-html="certsTitle">Certifications<br> and the road ahead</h2>
+      <div class="road" data-reveal aria-hidden="true">
+        <div class="road__track"><div class="road__fill"></div></div>
+        <ol class="road__stops">
+          <li class="is-done"><bdi>ISC2 CC</bdi></li>
+          <li class="is-now"><bdi>Security+</bdi></li>
+          <li><bdi>eJPT</bdi></li>
+          <li><bdi>CEH</bdi></li>
+          <li><bdi>BTL1</bdi></li>
+          <li><bdi>OSCP</bdi></li>
+        </ol>
+      </div>
+      <table class="certs__table">
+        <caption class="sr-only" data-i18n="certsCaption">Certifications earned, in progress and planned</caption>
+        <thead>
+          <tr><th scope="col" data-i18n="thCert">Certification</th><th scope="col" data-i18n="thBody">Awarded by</th><th scope="col" data-i18n="thStatus">Status</th></tr>
+        </thead>
+        <tbody>
+          <tr data-reveal style="--i:0"><td><bdi>Certified in Cybersecurity (CC)</bdi></td><td><bdi>ISC2</bdi></td><td class="is-strong" data-i18n="stDone">Earned</td></tr>
+          <tr data-reveal style="--i:1"><td><bdi>Security+</bdi></td><td><bdi>CompTIA</bdi></td><td class="is-strong" data-i18n="stNow">In progress</td></tr>
+          <tr data-reveal style="--i:2"><td><bdi>eJPT, junior penetration tester</bdi></td><td><bdi>INE Security</bdi></td><td data-i18n="stNext">Next</td></tr>
+          <tr data-reveal style="--i:3"><td><bdi>CEH, certified ethical hacker</bdi></td><td><bdi>EC-Council</bdi></td><td data-i18n="stPlan">Planned</td></tr>
+          <tr data-reveal style="--i:4"><td><bdi>BTL1, blue team level 1</bdi></td><td><bdi>Security Blue Team</bdi></td><td data-i18n="stPlan">Planned</td></tr>
+          <tr data-reveal style="--i:5"><td><bdi>OSCP</bdi></td><td><bdi>OffSec</bdi></td><td data-i18n="stPlan">Planned</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="skills" id="skills" aria-labelledby="skills-title">
+      <h2 class="skills__title" id="skills-title" data-reveal data-i18n="skillsTitle">Toolkit</h2>
+      <div class="skills__grid">
+        <div class="skills__col" data-reveal style="--i:0">
+          <h3 data-i18n="s1">Development</h3>
+          <ul><li>Laravel</li><li>Inertia.js</li><li>Jetstream</li><li>React</li><li>Node.js</li><li data-i18n="s1x">Arabic and English interfaces</li></ul>
+          <p class="skills__sum" data-i18n="s1Sum">Full-stack web apps, mostly Laravel with React on top.</p>
+        </div>
+        <div class="skills__col" data-reveal style="--i:1">
+          <h3 data-i18n="s2">DevOps</h3>
+          <ul><li>Docker</li><li>Terraform</li><li>Azure and AKS</li><li>GitHub Actions</li><li data-i18n="s2x">CI/CD pipelines</li></ul>
+          <p class="skills__sum" data-i18n="s2Sum">Infrastructure as code, and pipelines that ship on every commit.</p>
+        </div>
+        <div class="skills__col" data-reveal style="--i:2">
+          <h3 data-i18n="s3">Security</h3>
+          <ul><li data-i18n="s3a">Governance, risk and compliance</li><li data-i18n="s3b">Security assessments</li><li data-i18n="s3c">CCTV systems</li><li data-i18n="s3d">Networking</li></ul>
+          <p class="skills__sum" data-i18n="s3Sum">GRC and assessments at Pulsar; cameras and networks at TechGuard.</p>
+        </div>
+        <div class="skills__col" data-reveal style="--i:3">
+          <h3 data-i18n="s4">Design and branding</h3>
+          <ul><li data-i18n="s4a">Brand identity</li><li data-i18n="s4b">Brand systems</li><li data-i18n="s4c">Interface design</li></ul>
+          <p class="skills__sum" data-i18n="s4Sum">Identities that hold together, like the PulSec system.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <h2 class="sr-only" id="contact-title" data-i18n="contactTitle">Contact</h2>
+      <p class="contact__ask" data-reveal data-i18n="contactAsk">Building something, hiring, or need a system looked at? Write to me.</p>
+      <a class="contact__mail" href="mailto:ahmadelmufti@gmail.com?subject=Hello%20Ahmad" dir="ltr" data-reveal>
+        <span class="contact__line">ahmadelmufti</span><span class="contact__line">@gmail.com</span>
+      </a>
+      <div class="contact__foot">
+        <p data-i18n="contactCity">Benghazi, Libya</p>
+        <p class="contact__links">
+          <a class="link" href="https://github.com/ahm4dmufti" rel="me noopener" target="_blank">GitHub</a>
+          <a class="link" href="https://instagram.com/ahm4delmufti" rel="me noopener" target="_blank">Instagram</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="foot__name" aria-hidden="true" data-i18n="footName">Ahmad El Mufti</p>
+    <div class="foot__row">
+      <ul class="foot__ways">
+        <li><a class="link" href="mailto:ahmadelmufti@gmail.com" dir="ltr">ahmadelmufti@gmail.com</a></li>
+        <li><a class="link" href="https://github.com/ahm4dmufti" rel="me noopener" target="_blank" dir="ltr">github.com/ahm4dmufti</a></li>
+        <li><a class="link" href="https://instagram.com/ahm4delmufti" rel="me noopener" target="_blank" dir="ltr">@ahm4delmufti</a></li>
+      </ul>
+      <nav class="foot__nav" aria-label="Sections" data-i18n-attr="aria-label:footNavLabel">
+        <a class="link" href="#work" data-i18n="navWork">Work</a>
+        <a class="link" href="#about" data-i18n="navAbout">About</a>
+        <a class="link" href="#experience" data-i18n="navExperience">Experience</a>
+        <a class="link" href="#certifications" data-i18n="navCerts">Certifications</a>
+        <a class="link" href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
+      <p class="foot__credits" data-i18n-html="credits">Pictures: <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_postcard.jpg">“Benghazi postcard”</a>, Feyturi Co., before 1969, and <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_Town_Hall_Bellotto_Chandelier.jpg">“Benghazi Town Hall Bellotto Chandelier”</a>, before 1943, both <a class="link" href="https://creativecommons.org/publicdomain/mark/1.0/">public domain</a>, via Wikimedia Commons. Portraits are Ahmad’s own.</p>
+    </div>
+    <div class="foot__legal">
+      <p data-i18n="legal">© 2026 Ahmad El Mufti</p>
+      <a class="link" href="#top" data-i18n="backTop">Back to top</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
