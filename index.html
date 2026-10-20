@@ -70,11 +70,6 @@
         <p data-reveal style="--i:3" data-i18n="about3">I joined Pulsar as an intern in January 2026 and now work there as a security engineer. It changed how I write code: I assume someone is trying to break it.</p>
         <p data-reveal style="--i:4" data-i18n="about4">I also founded TechGuard, which installs Hikvision camera systems in homes and businesses, and DARA MAN, a resale label for designer menswear.</p>
       </div>
-      <figure class="about__portrait shutter" data-reveal>
-        <img src="/assets/me-1254.webp" srcset="/assets/me-760.webp 760w, /assets/me-1254.webp 1254w"
-             sizes="(max-width: 800px) 92vw, 42vw" width="1254" height="1254" loading="lazy" decoding="async"
-             alt="Black-and-white portrait of Ahmad against a grey backdrop" data-i18n-attr="alt:portraitAlt">
-      </figure>
       <figure class="about__postcard" data-reveal>
         <div class="about__frame"><img src="/assets/benghazi-postcard.webp" width="1000" height="687" loading="lazy" decoding="async"
              alt="Maidan Al Baladiya in Benghazi: palm trees, the old town hall clock tower and 1960s cars"
@@ -84,119 +79,90 @@
     </section>
 
     <section class="work" id="work" aria-labelledby="work-title">
-      <h2 class="h-section work__title" id="work-title" data-reveal data-i18n="workTitle">Selected work</h2>
-
-      <article class="project project--a" data-reveal>
-        <h3 class="project__name" data-i18n="p1Name">Mufti Gallery auction platform</h3>
-        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
-          <div class="ui-auction">
-            <div class="ui-bar"><span class="ui-brand">Mufti Gallery</span><span class="ui-tabs"><b>Auctions</b><span>Shop</span><span lang="ar">المزادات</span></span><span class="ui-langs"><b>EN</b><span>ع</span></span></div>
-            <div class="ui-lots">
-              <div class="ui-lot is-hot">
-                <div><p class="ui-lot__t">Brass coffee pot, engraved</p><p class="ui-lot__t" lang="ar" dir="rtl">دلة قهوة نحاسية منقوشة</p></div>
-                <div class="ui-lot__n"><span>Current bid</span><strong>LYD 2,450</strong><em>14 bids</em></div>
-                <div class="ui-lot__n"><span>Ends in</span><strong>02:14:09</strong><button tabindex="-1">Bid LYD 2,500</button></div>
-              </div>
-              <div class="ui-lot">
-                <div><p class="ui-lot__t">Oil on canvas, harbour at dusk</p><p class="ui-lot__t" lang="ar" dir="rtl">لوحة زيتية، الميناء عند الغروب</p></div>
-                <div class="ui-lot__n"><span>Current bid</span><strong>LYD 6,800</strong><em>9 bids</em></div>
-                <div class="ui-lot__n"><span>Ends in</span><strong>1d 05:40</strong><button tabindex="-1">Bid LYD 7,000</button></div>
-              </div>
-              <div class="ui-lot">
-                <div><p class="ui-lot__t">Silver tray, pair</p><p class="ui-lot__t" lang="ar" dir="rtl">صينيتان من الفضة</p></div>
-                <div class="ui-lot__n"><span>Buy now</span><strong>LYD 1,200</strong><em>Fixed price</em></div>
-                <div class="ui-lot__n"><span>Stock</span><strong>1 left</strong><button tabindex="-1">Add to cart</button></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="project__desc" data-i18n="p1Desc">Graduation project, in progress. A bilingual Arabic and English auction house with a fixed-price store beside it.</p>
-      </article>
-
-      <article class="project project--b" data-reveal>
-        <h3 class="project__name" data-i18n="p2Name">Cloud CI/CD pipeline</h3>
-        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
-          <div class="ui-run">
-            <div class="ui-run__head"><span class="ui-ok"></span><strong>deploy.yml</strong><span>main · #128 · 6m 41s</span></div>
-            <ul class="ui-jobs">
-              <li><span class="ui-ok"></span>lint &amp; test<em>58s</em></li>
-              <li><span class="ui-ok"></span>docker build &amp; push<em>2m 03s</em></li>
-              <li><span class="ui-ok"></span>terraform plan<em>47s</em></li>
-              <li><span class="ui-ok"></span>terraform apply<em>1m 32s</em></li>
-              <li><span class="ui-ok"></span>deploy to AKS<em>1m 21s</em></li>
-            </ul>
-<pre><code>deploy:
-  needs: [build, terraform]
-  runs-on: ubuntu-latest
-  environment: production
-  steps:
-    - uses: azure/login@v2
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Deploy to AKS
-      uses: azure/k8s-deploy@v5
-      with:
-        namespace: production
-        manifests: k8s/
-        images: ${{ env.ACR }}/api:${{ github.sha }}</code></pre>
-            <p class="ui-run__foot"><span class="ui-ok"></span>api:3f9c2e1 live in production, 3 of 3 pods ready</p>
-          </div>
-        </div>
-        <p class="project__desc" data-i18n="p2Desc">A Node.js service on Azure AKS. Terraform builds the infrastructure and GitHub Actions ships every commit to main.</p>
-      </article>
-
-      <article class="project project--remark" data-reveal>
-        <h3 class="project__name" data-i18n="p5Name">PulSec brand system</h3>
-        <p class="project__remark" data-i18n="p5Desc">A full brand identity for Pulsar’s managed security service, covering its SOC and threat-intelligence offer.</p>
-      </article>
-
-      <article class="project project--c" data-reveal>
-        <h3 class="project__name" data-i18n="p3Name">Mufti Gallery product manager</h3>
-        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
-          <div class="ui-table">
-            <div class="ui-table__head"><strong>Products</strong><span class="ui-search">Search 312 pieces</span><button tabindex="-1">New product</button></div>
-            <table>
-              <thead><tr><th>Piece</th><th>Period</th><th>Price</th><th>Status</th></tr></thead>
-              <tbody>
-                <tr><td>Brass coffee pot, engraved</td><td>Early 20th c.</td><td>LYD 2,450</td><td><span class="ui-pill is-live">In auction</span></td></tr>
-                <tr class="is-sel"><td>Silver tray, pair</td><td>1950s</td><td>LYD 1,200</td><td><span class="ui-pill is-shop">In shop</span></td></tr>
-                <tr><td>Oil on canvas, harbour at dusk</td><td>1960s</td><td>LYD 6,800</td><td><span class="ui-pill is-live">In auction</span></td></tr>
-                <tr><td>Carved wooden chest</td><td>Late 19th c.</td><td>LYD 3,900</td><td><span class="ui-pill">Draft</span></td></tr>
-                <tr><td>Glass oil lamp</td><td>1940s</td><td>LYD 650</td><td><span class="ui-pill is-shop">In shop</span></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <p class="project__desc" data-i18n="p3Desc">The gallery’s back office, in Laravel with Inertia.js and Jetstream: every piece catalogued, priced and sent to auction or the shop.</p>
-      </article>
-
-      <article class="project project--d" data-reveal>
-        <h3 class="project__name" data-i18n="p4Name">SME inventory and sales system</h3>
-        <div class="project__media" data-ui dir="ltr" aria-hidden="true">
-          <div class="ui-inv">
-            <div class="ui-inv__stats">
-              <div><span>Sales today</span><strong>LYD 4,180</strong></div>
-              <div><span>Orders</span><strong>23</strong></div>
-              <div><span>Low stock</span><strong class="is-warn">3 items</strong></div>
-            </div>
-            <ul class="ui-inv__list">
-              <li><span>A4 paper, 500 sheets</span><em>4 left · reorder at 10</em></li>
-              <li><span>Printer toner, black</span><em>2 left · reorder at 5</em></li>
-              <li><span>USB-C cable, 1 m</span><em>6 left · reorder at 15</em></li>
-            </ul>
-            <div class="ui-inv__recent">
-              <p>Recent sales</p>
-              <ul><li><span>#1043 · 3 items</span><b>LYD 215</b></li><li><span>#1042 · 1 item</span><b>LYD 48</b></li><li><span>#1041 · 6 items</span><b>LYD 390</b></li></ul>
-            </div>
-            <div class="ui-inv__best">
-              <p>Best sellers this week</p>
-              <ol><li><span>Ballpoint pens, box of 50</span><b>41 sold</b></li><li><span>A4 paper, 500 sheets</span><b>36 sold</b></li><li><span>Sticky notes, 12 pads</span><b>22 sold</b></li></ol>
-            </div>
-          </div>
-        </div>
-        <p class="project__desc" data-i18n="p4Desc">A team project in Laravel: stock levels, sales and reorder alerts for a small business.</p>
-      </article>
-      <p class="work__note" data-i18n="workNote">Interfaces above are drawn for this page with sample data.</p>
+      <div class="work__head">
+        <h2 class="h-section work__title" id="work-title" data-reveal data-i18n="workTitle">Selected work</h2>
+        <p class="work__lead" data-reveal style="--i:1" data-i18n="workLead">A catalogue of what I’ve built, most of it for businesses I run. Open any entry for its notes.</p>
+        <figure class="work__frontis" data-reveal style="--i:2">
+          <img src="/assets/cyrenaica-cartouche.webp" width="1000" height="899" loading="lazy" decoding="async"
+               alt="Engraved title cartouche with scrolls, reading Cyrenaica, Marmarica ac Lybia Exterior"
+               data-i18n-attr="alt:cartoucheAlt">
+          <figcaption data-i18n="cartoucheCaption">Title cartouche of Mercator’s map of Cyrenaica, 1695.</figcaption>
+        </figure>
+      </div>
+      <div class="catalogue">
+        <details class="lot" data-reveal style="--i:0">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l1Title">Mufti Gallery auction house</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l1Medium">Web platform in Arabic and English</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l1Prov">Mufti Gallery, as my graduation project at LIMU</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l1Cond">In development</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l1Notes">Timed auctions and a fixed-price shop for the same collection, so a piece can go under the hammer or straight to a buyer. Every page works in Arabic, right to left, and in English.</p></div>
+        </details>
+        <details class="lot" data-reveal style="--i:1">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l2Title">Gallery product manager</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l2Medium">Laravel, Inertia.js, Jetstream</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l2Prov">Built in-house for Mufti Gallery</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l2Cond">Private, to be hosted on LibyanSpider</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l2Notes">The back office behind the gallery: each piece is catalogued with its period, photographs and price, then sent to auction or to the shop.</p></div>
+        </details>
+        <details class="lot" data-reveal style="--i:2">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l3Title">TechGuard clients and sites</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l3Medium">Web application</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l3Prov">Built in-house for TechGuard</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l3Cond">Private, in development</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l3Notes">One record for every client and every site: which cameras are installed where, and when each site was last serviced.</p></div>
+        </details>
+        <details class="lot" data-reveal style="--i:0">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l4Title">Cloud CI/CD pipeline</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l4Medium">Node.js, Azure AKS, Terraform, GitHub Actions</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l4Prov">Personal build</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l4Cond">Complete</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l4Notes">Terraform describes the Azure infrastructure. GitHub Actions tests each change, builds the container and rolls it out to a Kubernetes cluster on AKS.</p></div>
+        </details>
+        <details class="lot" data-reveal style="--i:1">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l5Title">SME inventory and sales system</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l5Medium">Laravel</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l5Prov">Team project</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l5Cond">Complete</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l5Notes">Stock levels, sales records and low-stock alerts for a small business, built with a team.</p></div>
+        </details>
+        <details class="lot" data-reveal style="--i:2">
+          <summary class="lot__summary">
+            <h3 class="lot__title" data-i18n="l6Title">PulSec brand system</h3>
+            <dl class="lot__fields">
+              <div><dt data-i18n="fMedium">Medium</dt><dd data-i18n="l6Medium">Brand identity</dd></div>
+              <div><dt data-i18n="fProvenance">Provenance</dt><dd data-i18n="l6Prov">Pulsar’s managed security service</dd></div>
+              <div><dt data-i18n="fCondition">Condition</dt><dd data-i18n="l6Cond">Complete</dd></div>
+            </dl>
+            <span class="lot__toggle" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><rect x="7" y="1" width="2" height="14"/><rect x="1" y="7" width="14" height="2"/></svg></span>
+          </summary>
+          <div class="lot__notes"><p data-i18n="l6Notes">A full brand identity for Pulsar’s managed security service, covering its SOC and threat-intelligence offer.</p></div>
+        </details>
+      </div>
     </section>
 
     <section class="exp" id="experience" aria-labelledby="exp-title">
@@ -319,7 +285,7 @@
         <a class="link" href="#certifications" data-i18n="navCerts">Certifications</a>
         <a class="link" href="#contact" data-i18n="navContact">Contact</a>
       </nav>
-      <p class="foot__credits" data-i18n-html="credits">Pictures: <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_postcard.jpg">“Benghazi postcard”</a>, Feyturi Co., before 1969, and <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_Town_Hall_Bellotto_Chandelier.jpg">“Benghazi Town Hall Bellotto Chandelier”</a>, before 1943, both <a class="link" href="https://creativecommons.org/publicdomain/mark/1.0/">public domain</a>, via Wikimedia Commons. Portraits are Ahmad’s own.</p>
+      <p class="foot__credits" data-i18n-html="credits">Pictures: <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_postcard.jpg">“Benghazi postcard”</a>, Feyturi Co., before 1969, <a class="link" href="https://commons.wikimedia.org/wiki/File:Benghazi_Town_Hall_Bellotto_Chandelier.jpg">“Benghazi Town Hall Bellotto Chandelier”</a>, before 1943, and <a class="link" href="https://commons.wikimedia.org/wiki/File:Basic_cartouche_on_a_Cyrenaica_map_by_Mercator.jpg">“Basic cartouche on a Cyrenaica map by Mercator”</a>, 1695, all <a class="link" href="https://creativecommons.org/publicdomain/mark/1.0/">public domain</a>, via Wikimedia Commons. Portraits are Ahmad’s own.</p>
     </div>
     <div class="foot__legal">
       <p data-i18n="legal">© 2026 Ahmad El Mufti</p>
