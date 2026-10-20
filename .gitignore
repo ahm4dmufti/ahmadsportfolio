@@ -7,7 +7,7 @@ dist/
 .claude/
 .agents/
 .vscode/
-assets/
+/assets/
 skills-lock.json
 .vite/
 .taste-skill/
