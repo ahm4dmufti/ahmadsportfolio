@@ -158,6 +158,16 @@ langButton.addEventListener('click', () => {
   });
 })();
 
+/* A contents entry opens the lot it points to, so the notes are there on arrival. */
+(() => {
+  const openLot = (hash) => {
+    const lot = hash && document.querySelector(`details.lot${hash}`);
+    if (lot) lot.open = true;
+  };
+  document.querySelectorAll('.work__entry').forEach((a) => a.addEventListener('click', () => openLot(a.hash)));
+  openLot(location.hash);
+})();
+
 /* Reveal once as each part enters the viewport. Never replays; never leaves content hidden. */
 (() => {
   const targets = document.querySelectorAll('[data-reveal]');
