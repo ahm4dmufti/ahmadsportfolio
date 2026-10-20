@@ -10,3 +10,4 @@ dist/
 assets/
 skills-lock.json
 .vite/
+.taste-skill/

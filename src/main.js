@@ -85,7 +85,7 @@ function loadArabicFont() {
   const link = document.createElement('link');
   link.id = 'font-ar';
   link.rel = 'stylesheet';
-  link.href = 'https://fonts.googleapis.com/css2?family=Amiri&display=swap';
+  link.href = 'https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600&display=swap';
   document.head.append(link);
 }
 
@@ -118,6 +118,45 @@ langButton.addEventListener('click', () => {
   if (document.startViewTransition && !calm) document.startViewTransition(swap);
   else swap();
 });
+
+/* Depth under the pointer: the portrait turns a little toward the cursor and the
+   name drifts the other way, so the two read as separate planes. Spring-like
+   smoothing (each frame closes 8% of the gap), transforms set on each element
+   directly, and only for a real mouse with motion allowed. */
+(() => {
+  const hero = document.querySelector('.hero');
+  const figure = document.querySelector('.hero__figure');
+  if (!hero || !figure) return;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)');
+  const calm = matchMedia('(prefers-reduced-motion: reduce)');
+  const target = { x: 0, y: 0 };
+  const cur = { x: 0, y: 0 };
+  let frame = 0;
+
+  const render = () => {
+    cur.x += (target.x - cur.x) * 0.08;
+    cur.y += (target.y - cur.y) * 0.08;
+    figure.style.transform = `translate3d(${(cur.x * 14).toFixed(2)}px, 0, 0) rotateY(${(cur.x * 3).toFixed(2)}deg)`;
+    heroName.style.transform = `translate3d(${(-cur.x * 30).toFixed(2)}px, ${(-cur.y * 12).toFixed(2)}px, 0)`;
+    const settled = Math.abs(target.x - cur.x) < 0.001 && Math.abs(target.y - cur.y) < 0.001;
+    frame = settled ? 0 : requestAnimationFrame(render);
+  };
+  const wake = () => { if (!frame) frame = requestAnimationFrame(render); };
+
+  hero.addEventListener('pointermove', (e) => {
+    if (!fine.matches || calm.matches || e.pointerType !== 'mouse') return;
+    const r = hero.getBoundingClientRect();
+    target.x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    target.y = ((e.clientY - r.top) / r.height) * 2 - 1;
+    wake();
+  });
+  hero.addEventListener('pointerleave', () => { target.x = 0; target.y = 0; wake(); });
+  calm.addEventListener('change', () => {
+    if (!calm.matches) return;
+    target.x = target.y = cur.x = cur.y = 0;
+    figure.style.transform = heroName.style.transform = '';
+  });
+})();
 
 /* Reveal once as each part enters the viewport. Never replays; never leaves content hidden. */
 (() => {

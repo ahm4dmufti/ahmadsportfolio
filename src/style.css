@@ -19,13 +19,13 @@
   --paper-muted: #4f4e48;
 
   /* type */
-  --font: "Boska", "Iowan Old Style", Georgia, serif;
-  --font-ar: "Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font: "General Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ar: "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
   --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
-  --step-display: clamp(4.5rem, 12.6vw, 16rem);
+  --step-display: clamp(4.5rem, 11.4vw, 15rem);
 
   /* space */
   --margin: clamp(1rem, 2.2vw, 2rem);
@@ -70,7 +70,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 p { text-wrap: pretty; }
-h1, h2, h3 { font-weight: 400; text-wrap: balance; hyphens: none; }
+h1, h2, h3 { font-weight: 500; text-wrap: balance; hyphens: none; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -118,7 +118,7 @@ h1, h2, h3 { font-weight: 400; text-wrap: balance; hyphens: none; }
   font-family: var(--font-ar); font-size: var(--step-body); line-height: 1;
   transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease;
 }
-.lang[lang="en"] { font-family: "Boska", Georgia, serif; }
+.lang[lang="en"] { font-family: "General Sans", system-ui, sans-serif; }
 .lang:active { transform: scale(0.97); }
 @media (hover: hover) and (pointer: fine) { .lang:hover { background: var(--surface-3); } }
 
@@ -137,6 +137,7 @@ h1, h2, h3 { font-weight: 400; text-wrap: balance; hyphens: none; }
   z-index: 1;
   display: flex; justify-content: space-between; align-items: baseline;
   font-size: var(--step-display);
+  font-weight: 600;
   line-height: 0.9;
   letter-spacing: -0.035em;
   white-space: nowrap;
@@ -147,7 +148,9 @@ html[lang="ar"] .hero__name { letter-spacing: 0; line-height: 1.25; font-size: c
 /* Arabic tails (ي، ق) fall far below the baseline; give the rising mask room for them */
 html[lang="ar"] .hero__word { padding-bottom: 0.38em; margin-bottom: -0.38em; }
 .hero__figure {
-  position: absolute; bottom: 0; left: 50%;
+  /* sits 3% below the fold so the pointer turn never shows a gap under the arms */
+  position: absolute; bottom: calc(var(--fig) * -0.03); left: 50%;
+  transform-origin: 50% 100%;
   width: var(--fig); height: var(--fig);
   translate: -50% 0;
   z-index: 2;
@@ -256,11 +259,11 @@ figcaption { margin-top: 0.75rem; font-size: var(--step-small); color: var(--mut
 }
 
 /* interface fragments: light product UIs, drawn with sample data */
-[data-ui] { font-family: "Boska", Georgia, serif; font-size: 14px; line-height: 1.35; letter-spacing: 0.005em; }
+[data-ui] { font-family: "General Sans", system-ui, sans-serif; font-size: 14px; line-height: 1.35; letter-spacing: 0.005em; }
 [data-ui] p { text-wrap: wrap; }
-[data-ui] button { font: 500 13px/1 "Boska", Georgia, serif; background: #181715; color: #e8e8e3; border: 0; border-radius: 4px; padding: 8px 10px; white-space: nowrap; }
+[data-ui] button { font: 500 13px/1 "General Sans", system-ui, sans-serif; background: #181715; color: #e8e8e3; border: 0; border-radius: 4px; padding: 8px 10px; white-space: nowrap; }
 [data-ui] .ui-bar { display: flex; align-items: center; gap: 16px; padding: 12px 16px; background: #181715; color: #e8e8e3; }
-[data-ui] .ui-brand { font-family: "Boska", Georgia, serif; font-size: 16px; font-weight: 500; margin-right: auto; }
+[data-ui] .ui-brand { font-size: 16px; font-weight: 600; margin-right: auto; }
 [data-ui] .ui-tabs { display: flex; gap: 14px; color: #a3a199; }
 [data-ui] .ui-tabs b { color: #e8e8e3; font-weight: 600; }
 [data-ui] .ui-langs { display: flex; gap: 2px; }
@@ -270,7 +273,7 @@ figcaption { margin-top: 0.75rem; font-size: var(--step-small); color: var(--mut
 [data-ui] .ui-lot { display: grid; grid-template-columns: 1.6fr 1fr 1.1fr; gap: 12px; align-items: center; padding: 12px; background: #f4f4f0; border: 1px solid #d3d2cb; border-radius: 6px; }
 [data-ui] .ui-lot.is-hot { border-color: #181715; }
 [data-ui] .ui-lot__t { font-weight: 600; }
-[data-ui] .ui-lot__t[lang="ar"] { font-family: "Amiri", "Noto Naskh Arabic", serif; font-weight: 400; font-size: 15px; color: #4f4e48; text-align: left; }
+[data-ui] .ui-lot__t[lang="ar"] { font-family: var(--font-ar); font-weight: 400; font-size: 13px; color: #4f4e48; text-align: left; }
 [data-ui] .ui-lot__n { display: grid; gap: 2px; }
 [data-ui] .ui-lot__n span { color: #5a5953; font-size: 12px; }
 [data-ui] .ui-lot__n strong { font-variant-numeric: tabular-nums; font-size: 14px; }
@@ -436,7 +439,7 @@ html[dir="rtl"] .road__fill { transform-origin: right center; }
 
 /* ---------- footer ---------- */
 .foot { padding: clamp(9rem, 14vw, 13rem) var(--margin) var(--margin); overflow: hidden; }
-.foot__name { font-size: 15.8vw; line-height: 0.9; letter-spacing: -0.035em; white-space: nowrap; margin-inline-start: -0.04em; }
+.foot__name { font-size: 13.6vw; font-weight: 600; line-height: 0.9; letter-spacing: -0.035em; white-space: nowrap; margin-inline-start: -0.04em; }
 html[lang="ar"] .foot__name { letter-spacing: 0; line-height: 1.3; font-size: clamp(3.5rem, 12vw, 14rem); }
 .foot__row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); margin-top: 4.5rem; }
 .foot__ways { grid-column: 1 / span 5; grid-row: 1 / span 2; display: grid; align-content: start; font-size: var(--step-lead); }
@@ -457,8 +460,9 @@ html[dir="rtl"] .foot__ways a { display: inline-block; }
    html.js, and only when the visitor allows motion.
    ====================================================================== */
 
-/* hero entrance: letters rise from their baseline, the figure opens upward
-   like a shutter while settling from 1.12, then the line and actions rise. */
+/* hero entrance, "developing": the letters rise from their baseline, then the
+   portrait surfaces like a print in a darkroom tray (overexposed, soft and flat,
+   resolving into the finished black-and-white), then the line and actions rise. */
 @media (prefers-reduced-motion: no-preference) {
   .js .hero__letter {
     transform: translateY(112%);
@@ -466,23 +470,27 @@ html[dir="rtl"] .foot__ways a { display: inline-block; }
     animation-delay: calc(var(--l, 0) * 45ms + 150ms);
   }
   .js .hero__figure {
-    clip-path: inset(100% 0 0 0);
-    animation: shutter-up 1200ms var(--ease-in-out) 480ms forwards;
+    opacity: 0;
+    animation: fade 500ms var(--ease-out) 420ms forwards;
   }
   .js .hero__cutout {
-    transform: scale(1.12);
-    animation: settle 1600ms var(--ease-out) 480ms forwards;
+    filter: brightness(2.8) contrast(0.3) blur(10px);
+    transform: scale(1.045);
+    animation: develop 1900ms var(--ease-out) 420ms forwards;
   }
   .js [data-rise] {
     opacity: 0; transform: translateY(18px);
     animation: rise 800ms var(--ease-out) forwards;
-    animation-delay: calc(var(--i, 0) * 90ms + 1250ms);
+    animation-delay: calc(var(--i, 0) * 90ms + 1350ms);
   }
-  .js .top { opacity: 0; animation: fade 700ms var(--ease-out) 1400ms forwards; }
+  .js .top { opacity: 0; animation: fade 700ms var(--ease-out) 1500ms forwards; }
 }
 @keyframes letter-up { to { transform: none; } }
-@keyframes shutter-up { to { clip-path: inset(0 0 0 0); } }
-@keyframes settle { to { transform: none; } }
+@keyframes develop {
+  0%   { filter: brightness(2.8) contrast(0.3) blur(10px); transform: scale(1.045); }
+  45%  { filter: brightness(1.35) contrast(0.8) blur(2px); }
+  100% { filter: brightness(1) contrast(1) blur(0); transform: none; }
+}
 @keyframes rise { to { opacity: 1; transform: none; } }
 @keyframes fade { to { opacity: 1; } }
 
@@ -493,14 +501,24 @@ html[dir="rtl"] .foot__ways a { display: inline-block; }
   .js [data-rise] { animation-delay: 300ms; }
 }
 
-/* as the hero leaves, the name sinks back slower than the page: a small depth cue */
+/* depth: the portrait and the name sit on separate planes (main.js moves them with the pointer) */
+.hero__stage { perspective: 1400px; }
+
+/* as the hero leaves, the name opens like a pair of doors and the stage sinks back */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .hero__stage { animation: hero-depth linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+    .hero { view-timeline: --hero block; }
+    .hero__stage { animation: hero-depth linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+    .hero__word:first-child { animation: doors-start linear both; animation-timeline: --hero; animation-range: exit 0% exit 80%; }
+    .hero__word:last-child { animation: doors-end linear both; animation-timeline: --hero; animation-range: exit 0% exit 80%; }
+    html[dir="rtl"] .hero__word:first-child { animation-name: doors-end; }
+    html[dir="rtl"] .hero__word:last-child { animation-name: doors-start; }
     .about__frame img { animation: drift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
   }
 }
 @keyframes hero-depth { to { transform: translateY(14%); opacity: 0.35; } }
+@keyframes doors-start { to { transform: translateX(-22vw); } }
+@keyframes doors-end { to { transform: translateX(22vw); } }
 @keyframes drift { from { transform: scale(1.1) translateY(-3%); } to { transform: scale(1.1) translateY(3%); } }
 
 /* section entrances, once, choreographed per section */
